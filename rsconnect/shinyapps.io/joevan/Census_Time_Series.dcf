@@ -1,0 +1,13 @@
+name: Census_Time_Series
+title: Census_Time_Series
+username: joevan
+account: joevan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9765388
+bundleId: 7788529
+url: https://joevan.shinyapps.io/Census_Time_Series/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 1-DataExtraction_TimeSeries.R

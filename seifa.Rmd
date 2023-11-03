@@ -1,0 +1,29 @@
+---
+title: "Socioeconomic Index For Areas (SEIFA)"
+output: html_fragment
+---
+
+# Socioeconomic Indexes For Areas (SEIFA)
+### Data Sources
+All data was sourced from the Australian Bureau of Statistics (ABS) [Census of Population of Housing](https://www.abs.gov.au/census) [Application Programming Interface (API)](https://www.abs.gov.au/about/data-services/application-programming-interfaces-apis/data-api-user-guide). Specifically, [Socioeconomic Indexes for Areas (SEIFA)](https://www.abs.gov.au/statistics/people/people-and-communities/socio-economic-indexes-areas-seifa-australia/latest-release) were available for 2011, 2016 and 2021. 
+
+As with other variables, 2021 [Australian Statistical Geography Standard (ASGS)](https://www.abs.gov.au/statistics/statistical-geography/australian-statistical-geography-standard-asgs) areas were used for all boundaries, visualised at the [Statisical Area 2 (SA2)](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/main-structure-and-greater-capital-city-statistical-areas) level. However, SEIFA data was only available at the SA2 level for each census year, and so indexes were aggregated manually from the SA1 level to agree with 2021 SA2 boundaries. This process is described in more detail below under Methods.
+
+
+### Included variables
+The SEIFA variables chosen for estimation were all indexes enumerated by the ABS. Previous reporting at the Sydney Local Health District has focused on the Index of Relative Socioeconomic Disadvantage (IRSD), but each indexes has specific strengths and limitations, and are intended for different purposes. More detail is provided [here](https://www.abs.gov.au/statistics/people/people-and-communities/socio-economic-indexes-areas-seifa-australia/latest-release).
+
+
+### Method
+Raw SEIFA variable scores were sourced at the SA1 level for their respective Census (e.g. 2011 SEIFA scores for 2011 SA1 boundaries), along with Usual Resident Populations (URPs) for these areas. SA1 boundaries for 2011 and 2016 were intersected with 2021 SA2 boundaries, with a threshold of 50% taken for inclusion. That is, if an SA1 was at least 50% within the corresponding 2021 SA2, it was assigned to that area. In almost all cases this resulted in a one-to-one match. Scores were then population weighted using URPs to obtain an overall score for the 2021 SA2, with population weighted scores ranked and categorised into deciles. 
+
+This method was adapted from the [standard approach](https://www.abs.gov.au/methodologies/socio-economic-indexes-areas-seifa-australia-methodology/2021) used by the ABS for assigning indexes within each census year. 
+
+
+### Limitations
+SEIFA indexes are [calculated differently each year](https://www.abs.gov.au/methodologies/socio-economic-indexes-areas-seifa-australia-methodology/2021), and are not intended to be used for time series analyses. Nonetheless, methods for most indexes have changed only slightly between 2016 and 2021, and so superficial comparisons may be made, albeit cautiously. 
+
+Socioeconomic status is a highly complex issue and no one index, nor combination of indexes, is intended to capture the full spectrum of socioeconomic advantage and disadvantage. Indexes are designed to be indicative only, with full acknowledgement that important factors influencing socioeconomic status may not be adequately captured by any of these indexes. 
+
+
+
